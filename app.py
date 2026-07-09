@@ -23,7 +23,29 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+# ========== 密码验证 ==========
+if "authenticated" not in st.session_state:
+    st.session_state.authenticated = False
 
+if not st.session_state.authenticated:
+    st.title("🔒 请输入访问密码")
+    password_input = st.text_input("密码", type="password")
+    
+    # 优先从Streamlit Secrets读（部署用），其次读.env（本地用）
+    try:
+        correct_password = st.secrets["APP_PASSWORD"]
+    except:
+        correct_password = os.getenv("APP_PASSWORD", "123456")
+    
+    if st.button("登录"):
+        if password_input == correct_password:
+            st.session_state.authenticated = True
+            st.success("验证成功！")
+            st.rerun()
+        else:
+            st.error("密码错误")
+    
+    st.stop()  # 验证不通过，后面的代码不执行
 # ========== Session State 初始化 ==========
 if "messages" not in st.session_state:
     st.session_state.messages = []
