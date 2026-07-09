@@ -36,18 +36,18 @@ pip install -r requirements.txt
 ### 4. 开启Agent模式
 左侧边栏打开「工具调用智能体」开关即可体验Agent能力
 
-## 🌐 公网部署
+ 🌐 公网部署
 
-### 方案一：Streamlit Community Cloud（免费）
+ 方案一：Streamlit Community Cloud（免费）
 1. 上传GitHub → share.streamlit.io关联部署
 2. 配置环境变量DEEPSEEK_API_KEY
 
-### 方案二：云服务器
+ 方案二：云服务器
 ```bash
 nohup streamlit run app.py --server.port 8501 --server.address 0.0.0.0 &
 ```
 
-## 📁 项目结构
+ 📁 项目结构
 ```
 ai_companion/
 ├── app.py              # 主入口
@@ -63,7 +63,7 @@ ai_companion/
 └── utils/              # 工具（日志/装饰器）
 ```
 
-## 💡 Python高级语法应用
+ 💡 Python高级语法应用
 
 | 语法特性 | 应用场景 |
 |---------|---------|
@@ -75,11 +75,7 @@ ai_companion/
 | **魔术方法__call__** | LLM实例可直接函数调用 |
 | **静态方法** | 图片编码、工具方法 |
 
-## 📝 简历/Boss直聘话术
-
-> 独立迭代开发AI智能陪伴系统，基于Python实现DeepSeek大模型对接；通过面向对象、装饰器、生成器等高级语法完成项目工程化封装；实现情绪识别自动切换人设、陪伴等级养成、定时任务提醒、对话导出、多模态图文问答五大特色功能；**新增LLM Function Calling工具调用能力，内置计算器、时间查询、待办管理等工具，具备基础AI Agent智能体自主执行能力**；使用SQLite做持久化存储，基于Streamlit搭建交互界面，支持Streamlit Cloud与Docker两种公网部署方案。
-
-## 🔮 后续可拓展方向
+  🔮 后续可拓展方向
 
 - 新增更多工具：联网搜索、文件读写、邮件发送
 - RAG私有知识库接入
