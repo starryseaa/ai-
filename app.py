@@ -1,11 +1,9 @@
-"""
-AI智能伴侣 - Streamlit 主界面
-支持Agent工具调用模式
-"""
 import sys
 import os
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
 import streamlit as st
 from datetime import datetime, timedelta
